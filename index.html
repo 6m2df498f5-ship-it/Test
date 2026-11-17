@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Köhling &amp; Dr. Aldermann – Insolvenz- und Zwangsverwaltung</title>
+<meta name="description" content="Köhling & Dr. Aldermann – seit 1999 spezialisiert auf Insolvenzverwaltung und Zwangsverwaltung. Sechs Standorte in Nordrhein-Westfalen und Berlin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#f59500; --orange-dark:#d97f00; --orange-soft:#fff4e0;
+  --ink:#14161c; --ink-2:#1f232c; --text:#3b404b; --muted:#6b7280;
+  --line:#e7e5e1; --bg:#faf8f5; --white:#fff;
+  --radius:18px; --max:1180px;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-dark)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--orange)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:.25s}
+.btn-primary{background:var(--orange);color:var(--ink)}
+.btn-primary:hover{background:#ffab2e;transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.arrow{transition:transform .25s}
+a:hover .arrow{transform:translateX(4px)}
+
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
+header.scrolled{background:rgba(20,22,28,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo-mark{width:44px;height:44px;border-radius:10px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:17px;letter-spacing:-.02em}
+.logo-mark span{font-size:11px;margin:0 1px}
+.logo-text{font-weight:600;font-size:15px;line-height:1.2}
+.logo-text small{display:block;font-weight:400;opacity:.6;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.menu{display:flex;gap:34px;list-style:none;align-items:center}
+.menu a{color:rgba(255,255,255,.78);font-size:15px;font-weight:500;transition:.2s}
+.menu a:hover{color:#fff}
+.menu .btn{color:var(--ink);padding:11px 20px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
+.burger span{position:absolute;left:10px;right:10px;height:2px;background:#fff;transition:.3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:26px}
+.nav-open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+.nav-open .burger span:nth-child(2){top:21px;transform:rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;background:var(--ink);color:#fff;padding:180px 0 120px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:780px;height:780px;right:-220px;top:-240px;border-radius:50%;background:radial-gradient(circle,rgba(245,149,0,.35),transparent 65%)}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:end}
+.hero h1{color:#fff;font-size:clamp(42px,6.2vw,78px);margin:22px 0 26px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p.lead{font-size:19px;color:rgba(255,255,255,.72);max-width:580px;margin-bottom:38px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:30px;backdrop-filter:blur(8px)}
+.hero-card h3{color:#fff;font-size:20px;margin-bottom:6px}
+.hero-card p{color:rgba(255,255,255,.62);font-size:15px}
+.hero-card ul{list-style:none;margin-top:20px;display:grid;gap:12px}
+.hero-card li{display:flex;gap:12px;font-size:15px;color:rgba(255,255,255,.85)}
+.hero-card li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--orange)}
+
+/* Stats */
+.stats{background:var(--white);border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:44px 24px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--serif);font-size:46px;font-weight:600;color:var(--ink);line-height:1}
+.stat b sup{font-size:24px;color:var(--orange)}
+.stat span{display:block;margin-top:10px;color:var(--muted);font-size:15px}
+
+/* Sections */
+section{padding:120px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(34px,4.2vw,52px);margin-top:16px;max-width:640px}
+.sec-head p{max-width:420px;color:var(--muted)}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.service{position:relative;background:var(--white);border:1px solid var(--line);border-radius:24px;padding:44px;transition:.35s;overflow:hidden}
+.service:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(20,22,28,.25);border-color:transparent}
+.service .num{font-family:var(--serif);font-size:15px;color:var(--orange-dark);font-weight:600}
+.service .icon{width:60px;height:60px;border-radius:16px;background:var(--orange-soft);display:grid;place-items:center;margin:26px 0 24px}
+.service .icon svg{width:28px;height:28px;stroke:var(--orange-dark)}
+.service h3{font-size:30px;margin-bottom:14px}
+.service p{margin-bottom:14px}
+.service ul{list-style:none;margin:22px 0 30px;display:flex;flex-wrap:wrap;gap:8px}
+.service li{font-size:13px;font-weight:500;padding:7px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.service .more{font-weight:600;color:var(--ink);display:inline-flex;gap:8px;border-bottom:2px solid var(--orange);padding-bottom:3px}
+.service.dark{background:var(--ink);border-color:var(--ink);color:rgba(255,255,255,.72)}
+.service.dark h3{color:#fff}
+.service.dark .icon{background:rgba(245,149,0,.14)}
+.service.dark .icon svg{stroke:var(--orange)}
+.service.dark li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:#fff}
+.service.dark .more{color:#fff}
+
+/* About */
+.about{background:var(--white)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.quote{position:relative;background:var(--orange);border-radius:28px;padding:56px;color:var(--ink)}
+.quote .big{font-family:var(--serif);font-size:120px;line-height:.6;opacity:.35;display:block;height:46px}
+.quote p{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.3;font-weight:500}
+.quote small{display:block;margin-top:26px;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.about h2{font-size:clamp(32px,3.8vw,46px);margin:16px 0 24px}
+.about p{margin-bottom:18px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.pillar{border-top:2px solid var(--orange);padding-top:16px}
+.pillar b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+.pillar span{font-size:14px;color:var(--muted);line-height:1.5;display:block}
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.person{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px;transition:.3s}
+.person:hover{border-color:var(--orange)}
+.avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--ink),#3a3f4b);color:var(--orange);display:grid;place-items:center;font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:22px}
+.person .role{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.person h3{font-size:22px;margin:6px 0 16px}
+.person .tag{display:inline-block;font-size:12px;font-weight:500;padding:5px 11px;border-radius:999px;background:var(--orange-soft);color:#8a5200;margin:0 4px 6px 0}
+.person.partner{border-color:var(--ink);box-shadow:inset 0 3px 0 var(--orange)}
+
+/* Locations */
+.locations-sec{background:var(--ink);color:rgba(255,255,255,.7)}
+.locations-sec h2{color:#fff}
+.locations-sec .sec-head p{color:rgba(255,255,255,.6)}
+.locations{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:24px;overflow:hidden}
+.loc{background:var(--ink);padding:34px;transition:.25s}
+.loc:hover{background:var(--ink-2)}
+.loc h3{color:#fff;font-size:24px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.loc h3::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px rgba(245,149,0,.18)}
+.loc address{font-style:normal;margin-bottom:16px;font-size:15px}
+.loc a{display:flex;gap:10px;font-size:15px;color:#fff;padding:2px 0}
+.loc a:hover{color:var(--orange)}
+.loc .fax{font-size:14px;color:rgba(255,255,255,.45)}
+
+/* Forms */
+.forms{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.form-link{display:flex;justify-content:space-between;align-items:center;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px 24px;font-weight:500;color:var(--ink);transition:.25s}
+.form-link:hover{border-color:var(--orange);transform:translateY(-3px)}
+.form-link .arrow{color:var(--orange-dark);font-size:20px}
+
+/* CTA */
+.cta{padding:0 0 120px}
+.cta-box{background:linear-gradient(120deg,var(--orange),#ffb84d);border-radius:32px;padding:70px;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.cta-box h2{font-size:clamp(30px,3.6vw,46px);max-width:620px}
+.cta-box p{color:var(--ink);opacity:.75;margin-top:12px}
+.cta-box .btn{background:var(--ink);color:#fff}
+.cta-box .btn:hover{background:#000;transform:translateY(-2px)}
+
+footer{background:var(--ink);color:rgba(255,255,255,.55);padding:60px 0 36px;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot p{max-width:380px;margin-top:16px}
+.foot-links{display:flex;gap:60px;flex-wrap:wrap}
+.foot-links h4{color:#fff;font-size:14px;margin-bottom:14px}
+.foot-links a{display:block;padding:3px 0}
+.foot-links a:hover{color:var(--orange)}
+.copy{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+@media (max-width:1000px){
+  .hero .wrap,.about .wrap{grid-template-columns:1fr;gap:48px}
+  .team{grid-template-columns:repeat(2,1fr)}
+  .locations,.forms{grid-template-columns:repeat(2,1fr)}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:860px){
+  .burger{display:block}
+  .menu{position:fixed;top:84px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--ink);padding:12px 24px 28px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s}
+  .menu li{width:100%}
+  .menu a{display:block;padding:14px 0;font-size:17px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .menu .btn{margin-top:16px;display:inline-flex;border:0;padding:12px 22px}
+  .nav-open .menu{opacity:1;transform:none;pointer-events:auto}
+  .nav-open header{background:var(--ink)}
+  .services{grid-template-columns:1fr}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:16px}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:80px 0}
+  .hero{padding:140px 0 80px}
+  .service,.quote{padding:32px}
+  .cta-box{padding:40px 28px}
+  .team,.locations,.forms,.pillars{grid-template-columns:1fr}
+  .stat b{font-size:36px}
+  .stat{padding:30px 16px}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Köhling &amp; Dr. Aldermann – Startseite">
+      <span class="logo-mark">K<span>&amp;</span>A</span>
+      <span class="logo-text">Köhling &amp; Dr. Aldermann<small>Rechtsanwälte</small></span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#schwerpunkte">Schwerpunkte</a></li>
+      <li><a href="#kanzlei">Kanzlei</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#standorte">Standorte</a></li>
+      <li><a href="#formulare">Formulare</a></li>
+      <li><a href="mailto:RAe@Koehling-Aldermann.de" class="btn btn-primary">Kontakt</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Seit 1999 · NRW &amp; Berlin</span>
+      <h1>Insolvenz&shy;verwaltung mit Erfahrung. <em>Neue Chancen</em> mit Weitblick.</h1>
+      <p class="lead">Die Sozietät Köhling &amp; Dr. Aldermann ist seit über 20 Jahren auf die Übernahme von Insolvenz- und Zwangsverwaltungen spezialisiert – als Amtsträger in gerichtlichem Auftrag.</p>
+      <div class="actions">
+        <a href="#schwerpunkte" class="btn btn-primary">Unsere Schwerpunkte <span class="arrow">→</span></a>
+        <a href="#standorte" class="btn btn-ghost">Standorte finden</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>Persönlich von Beginn an</h3>
+      <p>Wir verlieren keine Zeit, um Unternehmen fortzuführen und nach Möglichkeit zu sanieren.</p>
+      <ul>
+        <li>Fortführung &amp; Sanierung im Regelinsolvenzverfahren</li>
+        <li>Bestmögliche Berücksichtigung der Gläubigerinteressen</li>
+        <li>Zwangsverwaltung sämtlicher Immobilienarten</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>1999</b><span>Gründung der Kanzlei</span></div>
+    <div class="stat"><b>20<sup>+</sup></b><span>Jahre Erfahrung</span></div>
+    <div class="stat"><b>6</b><span>Standorte in NRW &amp; Berlin</span></div>
+    <div class="stat"><b>2</b><span>Kernbereiche, voller Fokus</span></div>
+  </div>
+</div>
+
+<section id="schwerpunkte">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Unsere Schwerpunkte</span><h2>Zwei Kernbereiche. Ein klarer Fokus.</h2></div>
+      <p>Die beiden Partner sind ausschließlich im Bereich der Insolvenz- und Zwangsverwaltung tätig – in gerichtlichem Auftrag.</p>
+    </div>
+    <div class="services">
+      <article class="service reveal">
+        <span class="num">01</span>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Insolvenzverwaltung</h3>
+        <p>Seit unserer Kanzleigründung im Jahre 1999 unser zentraler Tätigkeitsschwerpunkt. Durch die persönliche Betreuung der Insolvenzverfahren von Beginn an verlieren wir keine Zeit, um ein Unternehmen fortzuführen und nach Möglichkeit zu sanieren.</p>
+        <p>Gemeinsam mit unseren qualifizierten Mitarbeitern erarbeiten wir das wirtschaftlich beste Ergebnis. Oft ergeben sich für die Unternehmen neue Chancen.</p>
+        <ul><li>Regelinsolvenz</li><li>Verbraucherinsolvenz</li><li>Sanierung</li><li>Treuhand</li></ul>
+        <a href="https://koehling-aldermann.de/schwerpunkte/insolvenzverwaltung-und-zwangsverwaltung" class="more">Mehr erfahren <span class="arrow">→</span></a>
+      </article>
+      <article class="service dark reveal">
+        <span class="num">02</span>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></div>
+        <h3>Zwangsverwaltung</h3>
+        <p>Der zweite Kernbereich unserer Tätigkeit. Mit einem hochspezialisierten Team sorgen wir für den größtmöglichen wirtschaftlichen Erfolg bei der Bewirtschaftung der Immobilien – in enger Abstimmung mit Gläubigern und Gericht.</p>
+        <ul><li>Wohnkomplexe</li><li>Einfamilienhäuser</li><li>WE-Einheiten</li><li>Gewerbeobjekte</li></ul>
+        <a href="https://koehling-aldermann.de/schwerpunkte/insolvenzverwaltung-und-zwangsverwaltung" class="more">Mehr erfahren <span class="arrow">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="kanzlei">
+  <div class="wrap">
+    <div class="quote reveal">
+      <span class="big">“</span>
+      <p>Zielorientiertes Zusammenwirken interdisziplinärer Experten aus Wirtschaft und Recht garantiert ein hohes Maß an Effizienz.</p>
+      <small>Unsere Philosophie</small>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Die Kanzlei</span>
+      <h2>Ein großer Erfahrungsfundus aus über 20 Jahren.</h2>
+      <p>In mehr als 20 Jahren haben wir uns einen großen Erfahrungsfundus in der Bearbeitung von Insolvenzverfahren verschiedener Wirtschaftsbranchen erarbeitet. Wir verfügen über die notwendige Kompetenz, die eine geregelte und schnelle Bearbeitung ermöglicht.</p>
+      <p>Ein Team hochqualifizierter Mitarbeiter gewährleistet eine hohe Qualität bei der Verfahrensbearbeitung.</p>
+      <div class="pillars">
+        <div class="pillar"><b>Kompetenz</b><span>Geregelte, schnelle Bearbeitung</span></div>
+        <div class="pillar"><b>Qualität</b><span>Hochqualifiziertes Team</span></div>
+        <div class="pillar"><b>Effizienz</b><span>Wirtschaft &amp; Recht vereint</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Anwälte</span><h2>Die Menschen hinter den Verfahren.</h2></div>
+      <p>Als Insolvenzverwalter, Treuhänder und Zwangsverwalter werden Dr. Sabine Aldermann und Christof Köhling bestellt.</p>
+    </div>
+    <div class="team">
+      <div class="person partner reveal"><div class="avatar">CK</div><span class="role">Rechtsanwalt · Partner</span><h3>Christof Köhling</h3><span class="tag">Insolvenzrecht</span><span class="tag">Wirtschaftsrecht</span></div>
+      <div class="person partner reveal"><div class="avatar">SA</div><span class="role">Rechtsanwältin · Partnerin</span><h3>Dr. Sabine Aldermann</h3><span class="tag">Gesellschaftsrecht</span><span class="tag">Insolvenzrecht</span><span class="tag">Sportrecht</span></div>
+      <div class="person reveal"><div class="avatar">VH</div><span class="role">Rechtsanwalt</span><h3>Volker Hengemühle</h3></div>
+      <div class="person reveal"><div class="avatar">MA</div><span class="role">Rechtsanwältin</span><h3>Meike Albers</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="locations-sec" id="standorte">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Unsere Standorte</span><h2>Sechsmal in Ihrer Nähe.</h2></div>
+      <p>Wir verwalten in den Bundesländern Nordrhein-Westfalen und Berlin.</p>
+    </div>
+    <div class="locations reveal">
+      <div class="loc"><h3>Dortmund</h3><address>Landgrafenstraße 2A<br>44139 Dortmund</address><a href="tel:+492318808390">0231 / 880839-0</a><span class="fax">Fax 0231 / 880839-22</span></div>
+      <div class="loc"><h3>Essen</h3><address>Huyssenallee 5<br>45128 Essen</address><a href="tel:+492012667592">0201 / 2667592</a><span class="fax">Fax 0201 / 2697967</span></div>
+      <div class="loc"><h3>Bochum</h3><address>Kortumstraße 47<br>44787 Bochum</address><a href="tel:+492346405204">0234 / 6405204</a><span class="fax">Fax 0234 / 6405208</span></div>
+      <div class="loc"><h3>Mönchengladbach</h3><address>Croonsallee 29<br>41061 Mönchengladbach</address><a href="tel:+4921614643901">02161 / 4643901</a><span class="fax">Fax 02161 / 4643902</span></div>
+      <div class="loc"><h3>Iserlohn</h3><address>Wasserstraße 11<br>58636 Iserlohn</address><a href="tel:+49237190990">02371 / 9099-0</a><span class="fax">Fax 02371 / 9099-22</span></div>
+      <div class="loc"><h3>Berlin</h3><address>Olivaer Platz 15<br>10707 Berlin</address><a href="tel:+493088709282">030 / 88709282</a><span class="fax">Fax 030 / 88709298</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="formulare">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Service</span><h2>Formulare &amp; Merkblätter</h2></div>
+      <p>Alle wichtigen Unterlagen zu Insolvenzverfahren, Forderungsanmeldung und Restschuldbefreiung.</p>
+    </div>
+    <div class="forms reveal">
+      <a class="form-link" href="https://koehling-aldermann.de/formulare/merkblatt">Merkblatt <span class="arrow">→</span></a>
+      <a class="form-link" href="https://koehling-aldermann.de/formulare/formulare-und-merkblaetter-zum-regelinsolvenzverfahren">Regelinsolvenzverfahren <span class="arrow">→</span></a>
+      <a class="form-link" href="https://koehling-aldermann.de/formulare/formulare-zum-verbraucherinsolvenzverfahren">Verbraucherinsolvenzverfahren <span class="arrow">→</span></a>
+      <a class="form-link" href="https://koehling-aldermann.de/formulare/formulare-zur-forderungsanmeldung">Forderungsanmeldung <span class="arrow">→</span></a>
+      <a class="form-link" href="https://koehling-aldermann.de/formulare/formulare-zum-restschuldbefreiungsverfahren">Restschuldbefreiungsverfahren <span class="arrow">→</span></a>
+      <a class="form-link" href="https://koehling-aldermann.de/formulare/formulare-zur-verfahrenskostenstundung">Verfahrenskostenstundung <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <div><h2>Sie haben Fragen zu einem Verfahren?</h2><p>Schreiben Sie uns – wir melden uns zeitnah bei Ihnen.</p></div>
+      <a href="mailto:RAe@Koehling-Aldermann.de" class="btn">RAe@Koehling-Aldermann.de <span class="arrow">→</span></a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo"><span class="logo-mark">K<span>&amp;</span>A</span><span class="logo-text">Köhling &amp; Dr. Aldermann<small>Rechtsanwälte</small></span></a>
+        <p>Spezialisiert auf Insolvenzverwaltung und Zwangsverwaltung – Dortmund, Essen, Berlin, Bochum, Iserlohn, Mönchengladbach.</p>
+      </div>
+      <div class="foot-links">
+        <div><h4>Kanzlei</h4><a href="#kanzlei">Philosophie</a><a href="#team">Anwälte</a><a href="https://koehling-aldermann.de/kanzlei/mitarbeiter">Mitarbeiter</a></div>
+        <div><h4>Schwerpunkte</h4><a href="https://koehling-aldermann.de/schwerpunkte/insolvenzantrag">Insolvenzantrag</a><a href="https://koehling-aldermann.de/schwerpunkte/eroeffnungsbeschluss">Eröffnungsbeschluss</a><a href="https://koehling-aldermann.de/gis">GIS</a></div>
+        <div><h4>Rechtliches</h4><a href="https://koehling-aldermann.de/impressum">Impressum</a><a href="https://koehling-aldermann.de/datenschutz">Datenschutz</a></div>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="year"></span> Köhling &amp; Dr. Aldermann</span><a href="mailto:RAe@Koehling-Aldermann.de">RAe@Koehling-Aldermann.de</a></div>
+  </div>
+</footer>
+
+<script>
+const header=document.querySelector('header'),burger=document.getElementById('burger');
+const onScroll=()=>header.classList.toggle('scrolled',scrollY>20);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+burger.addEventListener('click',()=>{const o=document.body.classList.toggle('nav-open');burger.setAttribute('aria-expanded',o)});
+document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('nav-open');burger.setAttribute('aria-expanded',false)}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
