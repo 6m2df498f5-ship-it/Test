@@ -1,0 +1,56 @@
+# ------------------------------------------------------------------
+# Köhling & Dr. Aldermann – Webserver-Einstellungen (Apache)
+# Diese Datei gehört in das Hauptverzeichnis der Website.
+# ------------------------------------------------------------------
+
+# Startseite
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Optional: alle Aufrufe auf https umleiten.
+# Erst aktivieren (die zwei # entfernen), wenn https://koehling-aldermann.de
+# fehlerfrei funktioniert. Bei manchen Hostern ist das bereits im
+# Kundenmenü eingestellt – dann hier nichts ändern.
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# --- Weiterleitungen von den Adressen der bisherigen Website --------
+RewriteRule ^(index\.php/)?startseite/?$                                       /                                        [R=301,L]
+RewriteRule ^index\.php/?$                                                     /                                        [R=301,L]
+RewriteRule ^kanzlei/?$                                                        /kanzlei.html                            [R=301,L]
+RewriteRule ^kanzlei/philosophie/?$                                            /kanzlei.html#philosophie                [R=301,L,NE]
+RewriteRule ^kanzlei/anwaelte/?$                                               /team.html#anwaelte                      [R=301,L,NE]
+RewriteRule ^kanzlei/mitarbeiter/?$                                            /team.html#mitarbeiter                   [R=301,L,NE]
+RewriteRule ^schwerpunkte/?$                                                   /schwerpunkte.html                       [R=301,L]
+RewriteRule ^schwerpunkte/insolvenzverwaltung-und-zwangsverwaltung/?$          /schwerpunkte.html                       [R=301,L]
+RewriteRule ^schwerpunkte/insolvenzantrag/?$                                   /insolvenzantrag.html                    [R=301,L]
+RewriteRule ^schwerpunkte/eroeffnungsbeschluss/?$                              /eroeffnungsbeschluss.html               [R=301,L]
+RewriteRule ^standorte-anfahrt/?$                                              /standorte.html                          [R=301,L]
+RewriteRule ^formulare/?$                                                      /formulare.html                          [R=301,L]
+RewriteRule ^formulare/merkblatt/?$                                            /formulare.html                          [R=301,L]
+RewriteRule ^formulare/formulare-und-merkblaetter-zum-regelinsolvenzverfahren/?$ /formulare-regelinsolvenz.html         [R=301,L]
+RewriteRule ^formulare/formulare-zum-verbraucherinsolvenzverfahren/?$          /formulare-verbraucherinsolvenz.html     [R=301,L]
+RewriteRule ^formulare/formulare-zur-forderungsanmeldung/?$                    /formulare-forderungsanmeldung.html      [R=301,L]
+RewriteRule ^formulare/formulare-zum-restschuldbefreiungsverfahren/?$          /formulare-restschuldbefreiung.html      [R=301,L]
+RewriteRule ^formulare/formulare-zur-verfahrenskostenstundung/?$               /formulare-verfahrenskostenstundung.html [R=301,L]
+RewriteRule ^formulare/formblaetter-europaeisches-insolvenzverfahren/?$        /formulare-eu.html                       [R=301,L]
+RewriteRule ^assets/uploads/Formblatt-EU/                                      /formulare-eu.html                       [R=301,L]
+RewriteRule ^gis/?$                                                            /gis.html                                [R=301,L]
+RewriteRule ^impressum/?$                                                      /impressum.html                          [R=301,L]
+RewriteRule ^datenschutz/?$                                                    /datenschutz.html                        [R=301,L]
+</IfModule>
+
+# Schriften und Bilder länger im Browser zwischenspeichern (schnellere Ladezeiten)
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType text/css "access plus 1 week"
+ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+<IfModule mod_mime.c>
+AddType font/woff2 .woff2
+</IfModule>
